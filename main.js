@@ -57,6 +57,21 @@ function createWindow(cb) {
   // win.openDevTools();
 }
 
+const isSecondInstance = app.makeSingleInstance(() => {
+  if (win) {
+    if (win.isMinimized()) {
+      win.restore();
+    }
+
+    win.show();
+    win.focus();
+  }
+});
+
+if (isSecondInstance) {
+  app.quit();
+}
+
 app.on('activate', () => {
   if (!win) {
     createWindow();
