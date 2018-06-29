@@ -1,0 +1,34 @@
+{
+  "name": "android-messages",
+  "version": "0.0.1",
+  "description": "Icon: message by Gregor Cresnar from the Noun Project",
+  "main": "main.js",
+  "scripts": {
+    "build": "npm run build-clean && npm run build-darwin && npm run build-linux && npm run build-win32",
+    "build-clean": "rimraf dist",
+    "build-darwin": "npm run build-clean && electron-packager . --platform=darwin --arch=x64 --icon=img/appicon --out=dist",
+    "build-linux": "npm run build-clean && electron-packager . --platform=linux --arch=x64 --icon=img/appicon --out=dist",
+    "build-win32": "npm run build-clean && electron-packager . --platform=win32 --arch=x64 --icon=img/appicon --out=dist",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/GyozaGuy/android-messages.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/GyozaGuy/android-messages/issues"
+  },
+  "homepage": "https://gitlab.com/GyozaGuy/android-messages#README",
+  "dependencies": {
+    "electron": "^2.0.3",
+    "electron-reload": "^1.2.3"
+  },
+  "devDependencies": {
+    "electron-packager": "^12.1.0",
+    "rimraf": "^2.6.2"
+  }
+}
