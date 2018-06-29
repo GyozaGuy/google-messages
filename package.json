@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Icon: message by Gregor Cresnar from the Noun Project",
   "main": "main.js",
+  "productName": "Android Messages",
   "scripts": {
     "build": "npm run build-clean && npm run build-darwin && npm run build-linux && npm run build-win32",
     "build-clean": "rimraf dist",

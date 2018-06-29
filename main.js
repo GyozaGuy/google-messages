@@ -1,6 +1,7 @@
 const {app, BrowserWindow, Menu, Tray} = require('electron');
 require('electron-reload')(__dirname);
 
+let isQuitting = false;
 let win;
 
 function createTray() {
@@ -32,7 +33,7 @@ function createTray() {
 }
 
 function createWindow(cb) {
-  win = new BrowserWindow({height: 700, show: false, width: 1000});
+  win = new BrowserWindow({height: 700, name: 'Test', show: false, title: 'Android Messages', width: 1000});
 
   win.loadURL('https://messages.android.com');
 
@@ -44,10 +45,13 @@ function createWindow(cb) {
     }
   });
 
-  win.on('close', () => {
-    // e.preventDefault();
-    // win.hide();
-    win = null;
+  win.on('close', e => {
+    if (!isQuitting) {
+      e.preventDefault();
+      win.hide();
+    } else {
+      win = null;
+    }
   });
 
   // win.openDevTools();
@@ -59,6 +63,10 @@ app.on('activate', () => {
   } else {
     win.show();
   }
+});
+
+app.on('before-quit', () => {
+  isQuitting = true;
 });
 
 app.on('ready', () => {
