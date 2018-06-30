@@ -33,7 +33,16 @@ function createTray() {
 }
 
 function createWindow(cb) {
-  win = new BrowserWindow({height: 700, name: 'Test', show: false, title: 'Android Messages', width: 1000});
+  win = new BrowserWindow({
+    height: 700,
+    show: false,
+    title: 'Android Messages',
+    webPreferences: {
+      nodeIntegration: false,
+      plugins: true
+    },
+    width: 1000
+  });
 
   win.loadURL('https://messages.android.com');
 
