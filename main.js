@@ -6,7 +6,21 @@ let win;
 
 function createTray() {
   const contextMenu = Menu.buildFromTemplate([
-    {label: 'Quit', click: () => app.quit()}
+    {label: 'Escape', click: () => app.quit()},
+    {
+      label: 'Edit',
+      submenu: [
+        {role: 'undo'},
+        {role: 'redo'},
+        {type: 'separator'},
+        {role: 'cut'},
+        {role: 'copy'},
+        {role: 'paste'},
+        {role: 'delete'},
+        {type: 'separator'},
+        {role: 'selectall'}
+      ]
+    }
   ]);
   const tray = new Tray(__dirname + '/img/appicon-tray.png');
 
