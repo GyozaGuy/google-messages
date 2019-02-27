@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, Tray} = require('electron');
+const {app, BrowserWindow, Menu, shell, Tray} = require('electron');
 require('electron-reload')(__dirname);
 
 let isQuitting = false;
@@ -97,6 +97,22 @@ app.on('ready', () => {
   createWindow(() => {
     if (process.platform !== 'darwin') {
       createTray();
+    }
+  });
+
+  const page = win.webContents;
+  const debouncers = [];
+
+  page.on('new-window', (e, url) => {
+    e.preventDefault();
+
+    if (!debouncers.includes(url)) {
+      debouncers.push(url);
+      shell.openExternal(url);
+
+      setTimeout(() => {
+        debouncers.splice(debouncers.indexOf(url), 1);
+      }, 100);
     }
   });
 });
