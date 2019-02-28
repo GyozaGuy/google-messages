@@ -26,7 +26,7 @@
   "homepage": "https://gitlab.com/GyozaGuy/android-messages#README",
   "dependencies": {
     "electron": "^2.0.11",
-    "electron-reload": "^1.2.3"
+    "electron-reload": "^1.4.0"
   },
   "devDependencies": {
     "electron-packager": "^12.1.0",
