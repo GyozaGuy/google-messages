@@ -44,7 +44,7 @@ function createWindow(cb) {
     width: 1000
   });
 
-  win.loadURL('https://messages.android.com');
+  win.loadURL('https://messages.google.com/web');
 
   win.once('ready-to-show', () => {
     win.show();
