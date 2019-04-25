@@ -25,12 +25,12 @@
   },
   "homepage": "https://gitlab.com/GyozaGuy/android-messages#README",
   "dependencies": {
-    "electron": "^2.0.11",
+    "electron": "^2.0.18",
     "electron-reload": "^1.4.0",
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
-    "electron-packager": "^12.1.0",
-    "rimraf": "^2.6.2"
+    "electron-packager": "^12.2.0",
+    "rimraf": "^2.6.3"
   }
 }
