@@ -1,4 +1,5 @@
 const {app, BrowserWindow, Menu, shell, Tray} = require('electron');
+const windowStateKeeper = require('electron-window-state');
 require('electron-reload')(__dirname);
 
 let isQuitting = false;
@@ -33,16 +34,24 @@ function createTray() {
 }
 
 function createWindow(cb) {
+  const mainWindowState = windowStateKeeper({
+    defaultHeight: 700,
+    defaultWidth: 1000
+  });
+  const {height, width} = mainWindowState;
+
   win = new BrowserWindow({
-    height: 700,
+    height,
     show: false,
     title: 'Android Messages',
     webPreferences: {
       nodeIntegration: false,
       plugins: true
     },
-    width: 1000
+    width
   });
+
+  mainWindowState.manage(win);
 
   win.loadURL('https://messages.google.com/web');
 

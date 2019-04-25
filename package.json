@@ -1,6 +1,6 @@
 {
   "name": "android-messages",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Icon: message by Gregor Cresnar from the Noun Project",
   "main": "main.js",
   "productName": "Android Messages",
@@ -26,7 +26,8 @@
   "homepage": "https://gitlab.com/GyozaGuy/android-messages#README",
   "dependencies": {
     "electron": "^2.0.11",
-    "electron-reload": "^1.4.0"
+    "electron-reload": "^1.4.0",
+    "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
     "electron-packager": "^12.1.0",
