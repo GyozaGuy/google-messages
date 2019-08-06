@@ -7,6 +7,7 @@ let win;
 
 function createTray() {
   const contextMenu = Menu.buildFromTemplate([
+    {label: 'Reload', click: () => win.reload()},
     {label: 'Quit', click: () => app.quit()}
   ]);
   const tray = new Tray(__dirname + '/img/appicon-tray.png');
