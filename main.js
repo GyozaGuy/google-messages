@@ -76,21 +76,6 @@ function createWindow(cb) {
   // win.openDevTools();
 }
 
-const isSecondInstance = app.makeSingleInstance(() => {
-  if (win) {
-    if (win.isMinimized()) {
-      win.restore();
-    }
-
-    win.show();
-    win.focus();
-  }
-});
-
-if (isSecondInstance) {
-  app.quit();
-}
-
 app.on('activate', () => {
   if (!win) {
     createWindow();
@@ -125,6 +110,21 @@ app.on('ready', () => {
       }, 100);
     }
   });
+});
+
+if (!app.requestSingleInstanceLock()) {
+  app.quit();
+}
+
+app.on('second-instance', () => {
+  if (win) {
+    if (win.isMinimized()) {
+      win.restore();
+    }
+
+    win.show();
+    win.focus();
+  }
 });
 
 app.on('window-all-closed', () => {
