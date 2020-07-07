@@ -20,20 +20,10 @@
     "no-console": [
       "warn",
       {
-        "allow": [
-          "error",
-          "info",
-          "warn"
-        ]
+        "allow": ["error", "info", "warn"]
       }
     ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   }
 }

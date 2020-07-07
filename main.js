@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, shell, Tray} = require('electron');
+const { app, BrowserWindow, Menu, shell, Tray } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 require('electron-reload')(__dirname);
 
@@ -7,8 +7,8 @@ let win;
 
 function createTray() {
   const contextMenu = Menu.buildFromTemplate([
-    {label: 'Reload', click: () => win.reload()},
-    {label: 'Quit', click: () => app.quit()}
+    { label: 'Reload', click: () => win.reload() },
+    { label: 'Quit', click: () => app.quit() }
   ]);
   const tray = new Tray(__dirname + '/img/appicon-tray.png');
 
@@ -39,7 +39,7 @@ function createWindow(cb) {
     defaultHeight: 700,
     defaultWidth: 1000
   });
-  const {height, width} = mainWindowState;
+  const { height, width } = mainWindowState;
 
   win = new BrowserWindow({
     height,
