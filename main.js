@@ -90,6 +90,8 @@ app.on('before-quit', () => {
 
 app.on('ready', () => {
   createWindow(() => {
+    Menu.setApplicationMenu(null);
+
     if (process.platform !== 'darwin') {
       createTray();
     }
