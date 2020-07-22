@@ -76,6 +76,10 @@ function createWindow(cb) {
   // win.openDevTools();
 }
 
+if (!app.requestSingleInstanceLock()) {
+  app.quit();
+}
+
 app.on('activate', () => {
   if (!win) {
     createWindow();
@@ -130,7 +134,3 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
-if (!app.requestSingleInstanceLock()) {
-  app.quit();
-}
