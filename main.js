@@ -114,10 +114,6 @@ app.on('ready', () => {
   });
 });
 
-if (!app.requestSingleInstanceLock()) {
-  app.quit();
-}
-
 app.on('second-instance', () => {
   if (win) {
     if (win.isMinimized()) {
@@ -134,3 +130,7 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+if (!app.requestSingleInstanceLock()) {
+  app.quit();
+}
