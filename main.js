@@ -77,16 +77,8 @@ function createWindow(cb) {
 }
 
 if (!app.requestSingleInstanceLock()) {
-  app.quit();
+  app.exit();
 }
-
-app.on('activate', () => {
-  if (!win) {
-    createWindow();
-  } else {
-    win.show();
-  }
-});
 
 app.on('before-quit', () => {
   isQuitting = true;
