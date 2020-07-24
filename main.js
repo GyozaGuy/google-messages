@@ -10,7 +10,7 @@ function createTray() {
     { label: 'Reload', click: () => win.reload() },
     { label: 'Quit', click: () => app.quit() }
   ]);
-  const tray = new Tray(__dirname + '/img/appicon-tray.png');
+  const tray = new Tray(`${__dirname}/img/appicon-tray.png`);
 
   tray.setToolTip('Messages');
   tray.setContextMenu(contextMenu);
@@ -43,6 +43,7 @@ function createWindow(cb) {
 
   win = new BrowserWindow({
     height,
+    icon: `${__dirname}/img/appicon-tray.png`,
     show: false,
     title: 'Android Messages',
     webPreferences: {
