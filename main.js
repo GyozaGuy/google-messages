@@ -8,7 +8,7 @@ let win;
 function createTray() {
   const contextMenu = Menu.buildFromTemplate([
     { label: 'Reload', click: () => win.reload() },
-    { label: 'Quit', click: () => app.quit() }
+    { label: 'Quit', click: () => app.exit() }
   ]);
   const tray = new Tray(`${__dirname}/img/appicon-tray.png`);
 
@@ -124,6 +124,6 @@ app.on('second-instance', () => {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit();
+    app.exit();
   }
 });
