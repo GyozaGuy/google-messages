@@ -1,5 +1,6 @@
 const { app, BrowserWindow, Menu, shell, Tray } = require('electron');
 const windowStateKeeper = require('electron-window-state');
+const url = require('url');
 require('electron-reload')(__dirname);
 
 let isQuitting = false;
@@ -55,7 +56,14 @@ function createWindow(cb) {
 
   mainWindowState.manage(win);
 
-  win.loadURL('https://messages.google.com/web');
+  win.loadURL(
+    url.format({
+      hostname: 'messages.google.com',
+      pathname: '/web',
+      protocol: 'https:',
+      slashes: true
+    })
+  );
 
   win.once('ready-to-show', () => {
     win.show();
