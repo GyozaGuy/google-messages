@@ -34,5 +34,8 @@
     "electron-packager": "^16.0.0",
     "minimist": "^1.2.6",
     "rimraf": "^2.7.1"
+  },
+  "peerDependencies": {
+    "got": "~11.8.5"
   }
 }
