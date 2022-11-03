@@ -1,6 +1,6 @@
 {
   "name": "android-messages",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A simple Electron wrapper for Google Messages.",
   "main": "main.js",
   "productName": "Google Messages",
