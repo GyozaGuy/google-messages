@@ -11,7 +11,7 @@ function createTray() {
     { label: 'Reload', click: () => win.reload() },
     { label: 'Quit', click: () => app.exit() }
   ]);
-  const tray = new Tray(`${__dirname}/img/appicon-tray.png`);
+  const tray = new Tray(`${__dirname}/img/messages.png`);
 
   tray.setToolTip('Messages');
   tray.setContextMenu(contextMenu);
