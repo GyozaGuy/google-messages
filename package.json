@@ -1,9 +1,9 @@
 {
-  "name": "android-messages",
+  "name": "google-messages",
   "version": "0.0.7",
   "description": "A simple Electron wrapper for Google Messages.",
   "main": "main.js",
-  "productName": "Google Messages",
+  "productName": "google-messages",
   "scripts": {
     "build": "npm run clean && npm run build-darwin && npm run build-linux && npm run build-win32 && npm run package",
     "build-darwin": "rimraf dist/*darwin* && electron-packager . --platform=darwin --arch=x64 --icon=img/messages --out=dist",
@@ -16,15 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/GyozaGuy/android-messages.git"
+    "url": "git+ssh://git@gitlab.com/GyozaGuy/google-messages.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/GyozaGuy/android-messages/issues"
+    "url": "https://gitlab.com/GyozaGuy/google-messages/issues"
   },
-  "homepage": "https://gitlab.com/GyozaGuy/android-messages#README",
+  "homepage": "https://gitlab.com/GyozaGuy/google-messages#README",
   "dependencies": {
     "electron-reload": "^1.5.0",
     "electron-window-state": "^5.0.3"
