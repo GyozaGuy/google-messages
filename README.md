@@ -4,7 +4,7 @@ By GyozaGuy
 
 ## Description
 
-A basic Electron app that wraps [messages.android.com](https://messages.android.com).
+A basic Electron app that wraps [messages.google.com](https://messages.google.com).
 
 ## Security Concerns
 
