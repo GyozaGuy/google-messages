@@ -44,9 +44,9 @@ function createWindow(cb) {
 
   win = new BrowserWindow({
     height,
-    icon: `${__dirname}/img/appicon-tray.png`,
+    icon: `${__dirname}/img/messages.png`,
     show: false,
-    title: 'Android Messages',
+    title: 'Google Messages',
     webPreferences: {
       nodeIntegration: false,
       plugins: true
