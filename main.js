@@ -127,7 +127,7 @@ app.whenReady().then(() => {
       }, 100);
     }
   });
-}).catch(err => console.error(err));
+});
 
 app.on('second-instance', () => {
   if (win) {
