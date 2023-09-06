@@ -30,7 +30,7 @@
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
-    "electron": "^21.0.0",
+    "electron": "^22.3.21",
     "electron-packager": "^16.0.0",
     "minimist": "^1.2.6",
     "rimraf": "^2.7.1"
