@@ -93,12 +93,22 @@ app.on('before-quit', () => {
   isQuitting = true;
 });
 
-app.on('ready', () => {
-  createWindow(() => {
-    Menu.setApplicationMenu(null);
+app.whenReady().then(() => {
+  function showWindow() {
+    createWindow(() => {
+      Menu.setApplicationMenu(null);
 
-    if (process.platform !== 'darwin') {
-      createTray();
+      if (process.platform !== 'darwin') {
+        createTray();
+      }
+    });
+  }
+
+  showWindow();
+
+  app.on('activate', () => {
+    if (!BrowserWindow.getAllWindows().length) {
+      showWindow();
     }
   });
 
@@ -132,6 +142,6 @@ app.on('second-instance', () => {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.exit();
+    app.quit();
   }
 });
